@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Blog com vídeos do YouTube e descrições acessíveis"
+    />
+
+    <link rel="stylesheet" href="main.css" />
+
+    <title>Blog de Vídeos</title>
+  </head>
+  <body>
+    <header>
+      <h1>ICSM49</h1>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav id="menu" aria-label="Menu Principal">
+        <a href="index.html">Conteúdo</a>
+        <a href="glossary.html">Glossário</a>
+        <a href="index.html#participantes">Participantes</a>
+        <a href="index.html#feedback">Feedback</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <h2 id="glossary">Glossário</h2>
+      <p>
+        Aqui você vai encontrar termos e conceitos usados em produção musical.
+      </p>
+
+      <button id="topBtn" onclick="backToTop()">⬆ Voltar ao Topo</button>
+
+      <section aria-labelledby="glossary">
+        
+        <article id="playlist">
+          <h3>Playlist</h3>
+          <p>
+            A <u>Playlist</u> é o conjunto de tracks e clipes que permitem você
+            montar a música, como um quebra cabeça, encaixando as peças nos
+            lugares certos.
+          </p>
+          <p>
+            Também possibilita a visualização da estrutura da música como um
+            todo, tendo uma visão geral de tudo funcionando ao mesmo tempo.
+          </p>
+
+          <ul>
+            <li>
+              <div>
+                <p>
+                  <strong> Track (trilha) </strong> - É uma camada única na
+                  playlist que representa um instrumento, voz ou outro tipo de
+                  som.
+                </p>
+                <img
+                  src="./assets/glossary/track.jpg"
+                  alt="Simboliza a trilha onde sons são colocados."
+                />
+              </div>
+            </li>
+            <li>
+              <div>
+                <p>
+                  <strong> Clipes </strong> - Toda <u>track</u> contém ao menos
+                  um <u>clipe</u>. Normalmente, uma <u>track</u> é composta por
+                  uma sequência de clipes, que podem ser iguais ou variados.
+                  Cada <u>clipe</u> contém um “pedaço” de música, um tipo de
+                  batida, ritmo, notas, etc, tudo definido pelo autor da música,
+                  para melhorar a organização e separação.
+                </p>
+                <img
+                  src="./assets/glossary/clipes.jpg"
+                  alt="Simboliza um pedaço da composição em uma track."
+                />
+              </div>
+            </li>
+          </ul>
+
+          <h4>Como utilizar</h4>
+
+          <p>
+            Basta arrastar e soltar batidas e sons produzidos no
+            <a href="#channel-rack"> Channel Rack </a> ou no
+            <a href="#piano-roll">Piano Roll</a>, e ir ajustando (arrastando) os
+            clipes para que fiquem no tempo correto.
+          </p>
+
+          <p>Exemplo de Playlist:</p>
+
+          <img
+            src="./assets/glossary/playlist.jpg"
+            alt="Lugar onde se pode visualizar toda a composição, com as tracks e clipes."
+            width="1000"
+          />
+        </article>
+
+        <article id="channel-rack">
+          <h3>Channel Rack</h3>
+          <p>
+            O <u>Channel Rack</u> é um espaço onde você escolhe, adiciona e
+            organiza os sons que vai usar na sua música.
+          </p>
+          <p>
+            Cada canal corresponde a um instrumento ou som. O padrão da
+            repetição do som pode ser definido clicando manualmente nos
+            quadrados, com cada um representando 1/4 de tempo. Nesse modo, o som
+            na saída será sempre o mesmo.
+          </p>
+          <p>
+            Para personalizar ainda mais os tempos e usar diferentes notas de um
+            instrumento para produzir sons diferentes, o
+            <a href="#piano-roll">Piano Roll</a> deve ser utilizado.
+          </p>
+          <p>
+            No exemplo abaixo, o Channel Rack contém 8 canais, sendo dois deles
+            definidos usando Piano Roll, e os demais definidos diretamente, com
+            diferentes disposições de tempo (1/8, 1/4, 1/2).
+          </p>
+
+          <img
+            src="./assets/glossary/channelrack.jpg"
+            alt="Lugar onde você escolhe, adiciona e organiza os sons que vai usar na sua música."
+          />
+        </article>
+
+        <article id="piano-roll">
+          <h3>Piano Roll</h3>
+          <p>
+            O <u>Piano Roll</u> funciona como uma grade, onde cada linha
+            corresponde a uma tecla do piano, que por sua vez corresponde a uma
+            nota musical. É aqui que podem ser definidos diferentes acordes e
+            harmonias para o instrumento que você estiver editando.
+          </p>
+
+          <p>
+            Cada coluna dessas linhas representa 1/4 de tempo, e pode ser
+            preenchida por um quadradinho, indicando que a nota será tocada
+            naquele momento. Aqui as notas podem ser alongadas, sendo tocadas
+            por mais tempo, apenas aumentando a largura dos quadradinhos.
+          </p>
+
+          <img
+            src="./assets/glossary/pianoroll.jpg"
+            alt="Lugar onde são definidos diferentes acordes e harmonias para o instrumento que você estiver editando."
+          />
+        </article>
+
+        <article id="mixer">
+          <h3>Mixer</h3>
+          <p>
+            O <u>Mixer</u> é como a "mesa de som" de um estúdio de gravação. É o
+            lugar onde você ajusta e equilibra todos os sons da sua música para
+            que fiquem em harmonia.
+          </p>
+
+          <p>
+            Cada som ou instrumento pode ser enviado à um canal, onde você pode
+            regular o volume, o balanço (se o som sairá mais pra esquerda ou
+            direita) e também adicionar efeitos como eco ou
+            <a href="#reverb">reverb</a>.
+          </p>
+
+          <img
+            src="./assets/glossary/mixer.jpg"
+            alt="lugar onde você ajusta e equilibra todos os sons da sua música para que fiquem em harmonia."
+          />
+        </article>
+
+        <article id="reverb">
+          <h3>Reverb</h3>
+          <p>
+            O <u>reverb</u> é um efeito que faz o som parecer que está em um
+            ambiente, como um quarto, um show, uma caverna, etc. Ele adiciona
+            uma espécie de "eco" suave, que dá profundidade e realismo ao som.
+          </p>
+        </article>
+
+        <article id="plugin">
+          <h3>Plugin</h3>
+          <p>
+            Um plugin no FL Studio é como um "acessório" que você adiciona ao
+            programa para criar ou modificar sons. Os plugins são opcionais,
+            pois não vêm instalados na versão padrão do FL Studio.
+          </p>
+
+          <p>Tipos de Plugin:</p>
+          <ul>
+            <li>
+              <p>
+                <strong>Instrumentos virtuais:</strong> Simulam instrumentos
+                como pianos, guitarras ou
+                <a href="#sintetizador">sintetizadores</a>. Exemplo: Sytrus,
+                Harmor.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Efeitos de áudio:</strong> Alteram ou melhoram os sons,
+                como <a href="#reverb">reverb</a>,
+                <a href="#equalizador">equalizador</a> ou
+                <a href="#compressor">compressor</a>.
+              </p>
+            </li>
+          </ul>
+        </article>
+
+        <article id="equalizador">
+          <h3>Equalizador</h3>
+          <p>
+            Um <u>equalizador</u> é como um "ajuste fino" do som, que permite
+            aumentar ou diminuir certas partes dele, chamadas de frequências.
+          </p>
+
+          <p>
+            Todo som tem <b>graves</b> (sons baixos), <b>médios</b> (sons
+            médios) e <b>agudos</b> (sons altos).
+          </p>
+
+          <p>
+            O equalizador permite ajustar cada uma dessas partes. Em um exemplo
+            equalizando o som de uma bateria, é possível:
+          </p>
+          <ul>
+            <li>
+              <p>
+                Aumentar os graves para deixar o som dos bumbos mais pesado,
+                como um subwoofer.
+              </p>
+            </li>
+            <li>
+              <p>
+                Diminuir os agudos para suavizar sons muito estridentes, como os
+                pratos.
+              </p>
+            </li>
+          </ul>
+        </article>
+
+        <article id="compressor">
+          <h3>Compressor</h3>
+          <p>
+            Um <u>compressor</u> é um "ajustador de volume automático" que ajuda
+            a equilibrar os sons de uma música.
+          </p>
+
+          <p>
+            Ele deixa os sons muito altos mais baixos e os sons muito baixos
+            mais altos, para que tudo fique mais uniforme. Ele corrige qualquer
+            "explosão" de volume na sua música, e deixando o som nivelado para
+            ouvir em diferentes sistemas (fones, caixas, etc).
+          </p>
+        </article>
+
+        <article id="sintetizador">
+          <h3>Sintetizador</h3>
+          <p>
+            Um <u>sintetizador</u> é uma ferramenta de "criar sons" que você
+            pode usar para fazer músicas. Ele não precisa de gravações reais,
+            porque gera os sons <strong>digitalmente</strong>.
+          </p>
+
+          <p>
+            Ou seja, é usado para criar sons únicos e criativos que não existem
+            no mundo real.
+          </p>
+
+          <p>
+            Ele usa diferentes formas de onda (como ondas sonoras) para criar
+            sons diferentes. Você pode ajustar o som para que pareça com um
+            instrumento real (como piano ou guitarra) ou criar sons totalmente
+            novos, como em música eletrônica.
+          </p>
+
+          <p>
+            Verifique exemplos de formas de ondas e seus sons clicando
+            <a
+              href="https://topmusicarts.com/blogs/news/4-main-types-of-synthesis-explained-wavetable-fm-additive-and-subtractive"
+              target="_blank"
+              title="Redirecionamento para site externo."
+              >aqui</a
+            >.
+          </p>
+
+          <p>
+            Saiba mais sobre sintetizadores
+            <a
+              href="https://www.youtube.com/watch?v=c3udLCvoCC0"
+              target="_blank"
+              title="Redirecionamento para site externo."
+              >clicando aqui</a
+            >
+            (conteúdo em inglês).
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer id="feedback">
+      <h2>Feedback</h2>
+      <p>Deixe-nos sua opinião! Sua sugestão é muito importante para nós.</p>
+      <form action="#" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <p
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:dct="http://purl.org/dc/terms/"
+      >
+        <span property="dct:title">Sinfonia para Todos</span> licenciado por
+        <a
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+          target="_blank"
+          title="Redirecionamento para site externo."
+          rel="license noopener noreferrer"
+          style="display: inline-block"
+          >CC BY-NC-SA 4.0
+
+          <img
+            class="cc-icons"
+            src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+            alt="Selo da licença Creative Commons"
+          />
+
+          <img
+            class="cc-icons"
+            src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+            alt="Selo da categoria BY"
+          />
+
+          <img
+            class="cc-icons"
+            src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
+            alt="Selo da categoria Non-Comercial"
+          />
+
+          <img
+            class="cc-icons"
+            src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
+            alt="Selo da categoria Share Alike "
+          />
+        </a>
+      </p>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const nav = document.getElementById("menu");
+        nav.classList.toggle("active");
+      }
+
+      const topBtn = document.getElementById("topBtn");
+
+      window.onscroll = function () {
+        if (document.documentElement.scrollTop > 300) {
+          topBtn.style.display = "block";
+        } else {
+          topBtn.style.display = "none";
+        }
+      };
+
+      function backToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
