@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Texto informativo e simulação de daltonismo" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="Daltonismo.css" />
+  <script src="Daltonismo.js" defer></script>
+
+  <title>Daltonismo</title>
+</head>
+
+<body>
+  <header>
+    <h1>ICSM49</h1>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="menu" aria-label="Menu Principal">
+      <a href="index.html">Conteúdo</a>
+      <a href="glossary.html">Glossário</a>
+      <a href="index.html#participantes">Participantes</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <h2 id="titulo">Daltonismo</h2>
+    <p>
+      O daltonismo é uma condição que afeta a percepção das cores, causada principalmente por alterações genéticas nos
+      cones da retina, que são responsáveis por detectar as cores. A forma mais comum de daltonismo é hereditária
+      (ligada ao cromossomo X), mas também pode ser adquirida por doenças ou lesões oculares.
+    </p>
+
+    <p>
+      Existem diferentes tipos de daltonismo, dependendo de quais cones estão afetados. Cada tipo altera a percepção das
+      cores de forma distinta:
+    </p>
+
+    <section aria-labelledby="exemplos">
+      <h3>Tipos de daltonismo</h3>
+        <article id="exemplo1">
+        <h4>Deuteranopia</h4>
+        <ul>
+          <li>
+            Causa: Falta de cones verdes (deuteranópsia).
+          </li>
+          <li>
+            Percepção: Vermelhos podem parecer mais escuros, verdes podem ser indistinguíveis de cinzas ou marrons.
+          </li>
+          <button id="efeito-deuteranopia" class="efeito-button">Mostrar efeito</button>
+            <div id="deuteranopia"></div>
+        </article>
+        <article id="exemplo2">
+        <h4>Protanopia</h4>
+        <ul>
+          <li>
+            Causa: Falta de cones vermelhos (protanópsia).
+          </li>
+          <li>
+            Percepção: Vermelhos podem parecer mais escuros, verdes podem ser indistinguíveis de cinzas ou marrons.
+          </li>
+          <button id="efeito-protanopia" class="efeito-button">Mostrar efeito</button>
+            <div id="protanopia"></div>
+        </article>
+        <article id="exemplo3">
+        <h4>Tritanopia</h4>
+        <ul>
+          <li>
+            Causa: Falta de cones azuis (tritanópsia).
+          </li>
+          <li>
+            Percepção: Azuis podem parecer mais escuros, amarelos podem ser indistinguíveis de cinzas ou marrons.
+          </li>
+          <button id="efeito-tritanopia" class="efeito-button">Mostrar efeito</button>
+            <div id="tritanopia"></div>
+        </article>
+        <article id="exemplo4">
+        <h4>Daltonismo total</h4>
+        <ul>
+          <li>
+            Causa: Falta de todos os tipos de cones (acromatópsia).
+          </li>
+          <li>
+            Percepção: Visão em tons de cinza, sem percepção de cores.
+          </li>
+          <button id="efeito-acromatopsia" class="efeito-button">Mostrar efeito</button>
+            <div id="acromatopsia"></div>
+      
+
+
+    </section>
+  </main>
+
+  <footer id="feedback">
+
+
+    <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+      <span property="dct:title">Sinfonia para Todos</span> licenciado por
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank"
+        title="Redirecionamento para site externo." rel="license noopener noreferrer" style="display: inline-block">CC
+        BY-NC-SA 4.0
+
+        <img class="cc-icons" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+          alt="Selo da licença Creative Commons" />
+
+        <img class="cc-icons" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+          alt="Selo da categoria BY" />
+
+        <img class="cc-icons" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
+          alt="Selo da categoria Non-Comercial" />
+
+        <img class="cc-icons" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
+          alt="Selo da categoria Share Alike " />
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("menu");
+      nav.classList.toggle("active");
+    }
+  </script>
+</body>
+
+</html>
