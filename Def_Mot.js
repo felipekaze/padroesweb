@@ -1,10 +1,11 @@
+var ativo = false;
+var executando = false;
+var elementos = new Array();
+
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelector("#Simular").addEventListener("click", Alternar);
 } );
 
-var ativo = false;
-var executando = false;
-let elementos = new Array();
 
 function Alternar()
 {
@@ -17,7 +18,8 @@ function Alternar()
 
 async function Simulacao()
 {
-    //Garantir que não possa haver 2 simulações simultâneas de deficiencia fisica
+    //Garantir que não possa haver 2 simulações simultâneas de 
+    //deficiencia fisica
     if(executando)
     {
         return;
