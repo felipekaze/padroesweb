@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Texto informativo e simulação de dislexia" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="Dislexia.css" />
+  <script src="Dislexia.js" defer></script>
+
+  <title>Dislexia</title>
+</head>
+
+<body>
+  <header>
+    <h1>ICSM49</h1>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="menu" aria-label="Menu Principal">
+      <a href="main.html">Conteúdo</a>
+      <a href="Equipe.html">Equipe</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <button id="topBtn" onclick="backToTop()">⬆ Voltar ao Topo</button>
+    <h2 id="titulo">Dislexia</h2>
+    <p>
+        A dislexia é uma condição que afeta a forma como o cérebro processa a linguagem escrita, 
+        causando dificuldades na leitura, escrita e, em alguns casos, na compreensão de textos. 
+        Essa condição tem origem neurobiológica e está relacionada a diferenças no funcionamento de áreas específicas do cérebro.
+    </p>
+    <p>
+        A forma mais comum de dislexia é do tipo fonológica, mas existem outros tipos, como a superficial, mista e visual-espacial, cada uma com características distintas. 
+        A dislexia pode se manifestar de maneiras variadas, dependendo do tipo e da intensidade.
+    </p>
+
+    <section>
+        <article id="exemplo1">
+        <h4>Dislexia Visual-Espacial</h4>
+        <ul>
+          <li>
+            Causa: Dificuldade em organizar o texto no espaço visual.
+          </li>
+          <li>
+            Percepção: Trocas na ordem das letras (inversões, rotações), pular linhas ou palavras ao ler.
+          </li>
+          </ul>
+          <button id="efeito-Visual-Espacial" class="efeito-button">Ativar efeito de dislexia</button>
+        </article>
+        <p id="dislexia-1">
+            Esse é um texto de exemplo usado para nossa simulação, caso ative o efeito sua leitura será dificultada.<br>
+
+            PS:Possivelmente vão existir mais exemplos de dislexia no futuro.
+          </p>
+    </section>
+  </main>
+
+  <footer id="feedback">
+
+
+    <p>
+      <span property="dct:title">Trabalho de Web Dev</span> licenciado por
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank"
+        title="Redirecionamento para site externo." rel="license noopener noreferrer" style="display: inline-block">CC
+        BY-NC-SA 4.0
+
+        <img class="cc-icons" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+          alt="Selo da licença Creative Commons" />
+
+        <img class="cc-icons" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+          alt="Selo da categoria BY" />
+
+        <img class="cc-icons" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
+          alt="Selo da categoria Non-Comercial" />
+
+        <img class="cc-icons" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
+          alt="Selo da categoria Share Alike " />
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("menu");
+      nav.classList.toggle("active");
+    }
+  </script>
+</body>
+
+</html>
