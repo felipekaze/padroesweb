@@ -10,13 +10,14 @@
 
     <link rel="stylesheet" href="Def_Mot.css">
     <script src="Def_Mot.js" defer></script>
+    <script src="Geral.js" defer></script>
 
     <title>Deficiencia Fisica</title>
   </head>
   <body>
     <header>
       <h1>ICSM49</h1>
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <button class="menu-toggle">☰</button>
       <nav id="menu" aria-label="Menu Principal">
         <button id="Simular" type="button" class="toggle-btn">Simulação</button>
         <a href="main.html">Conteúdo</a>
@@ -154,12 +155,5 @@
         </a>
       </p>
     </footer>
-    
-    <script>
-      function toggleMenu() {
-        const nav = document.getElementById("menu");
-        nav.classList.toggle("active");
-      }
-    </script>
   </body>
 </html>
