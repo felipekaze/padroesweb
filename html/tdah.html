@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TDAH - Transtorno de Déficit de Atenção</title>
+  <link rel="stylesheet" href="../css/tdah.css">
+  <script src="../javascript/tdah.js"></script>
+  <script src="../javascript/main.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>ICSM49</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#tipos">Tipos</a>
+      <a href="#simulacao">Simulação</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="menu-toggle" onclick="document.querySelector('header nav').classList.toggle('active')">☰</button>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <h2>O que é TDAH?</h2>
+      <img src="https://inovareducacaodeexcelencia.com/image/catalog/TDAH_5.jpg" alt="Ícone de cérebro colorido" style="width:120px; display:block; margin-bottom:10px;">
+      <p>O Transtorno de Déficit de Atenção com Hiperatividade (TDAH) é uma condição neurobiológica que afeta a capacidade de concentração, controle de impulsos e organização.</p>
+    </section>
+
+    <section id="tipos">
+      <h2>Tipos de TDAH</h2>
+      <article>
+        <h3>Predominantemente Desatento</h3>
+        <p>Dificuldade em manter o foco, esquecer tarefas, distração fácil.</p>
+      </article>
+      <article>
+        <h3>Predominantemente Hiperativo-Impulsivo</h3>
+        <p>Inquietação, fala excessiva, dificuldade em esperar a vez.</p>
+      </article>
+      <article>
+        <h3>Tipo Combinado</h3>
+        <p>Combinação dos sintomas de desatenção e hiperatividade/impulsividade.</p>
+      </article>
+    </section>
+
+    <section id="simulacao">
+      <h2>Simulação do TDAH</h2>
+      <p>A seguir, você pode ativar uma simulação de distrações visuais para entender como o TDAH pode afetar a concentração:</p>
+
+      <button type="button" onclick="simularTDAH()">Iniciar simulação</button>
+      <button type="button" onclick="pararSimulacao()">Parar simulação</button>
+
+      <div id="efeitosVisuais"></div>
+      <p id="mensagemSimulacao"></p>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <p>© 2025 - Projeto de Acessibilidade</p>
+  </footer>
+
+
+</body>
+</html>
