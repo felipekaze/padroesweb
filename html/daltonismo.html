@@ -7,6 +7,7 @@
   <meta name="description" content="Texto informativo e simulação de daltonismo" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <link rel="stylesheet" href="../css/daltonismo.css" />
+  <link rel="stylesheet" href="../css/simulation-menu.css" />
   <script src="../javascript/daltonismo.js" defer></script>
   <script src="../javascript/main.js" defer></script>
 
@@ -22,77 +23,159 @@
       <a href="../html/equipe.html">Equipe</a>
     </nav>
   </header>
-
-  <main id="main-content">
-    <button id="topBtn" onclick="backToTop()">⬆ Voltar ao Topo</button>
-    <h2 id="titulo">Daltonismo</h2>
-    <p>
-      O daltonismo é uma condição que afeta a percepção das cores, causada principalmente por alterações genéticas nos
-      cones da retina, que são responsáveis por detectar as cores. A forma mais comum de daltonismo é hereditária
-      (ligada ao cromossomo X), mas também pode ser adquirida por doenças ou lesões oculares.
-    </p>
-
-    <p>
-      Existem diferentes tipos de daltonismo, dependendo de quais cones estão afetados. Cada tipo altera a percepção das
-      cores de forma distinta:
-    </p>
-
-    <section>
-      <h3>Tipos de daltonismo</h3>
-        <article id="exemplo1">
-        <h4>Deuteranopia</h4>
-        <ul>
-          <li>
-            Causa: Falta de cones verdes (deuteranópsia).
-          </li>
-          <li>
-            Percepção: Vermelhos podem parecer mais escuros, verdes podem ser indistinguíveis de cinzas ou marrons.
-          </li>
+<button id="sidebarToggleBtn" aria-label="Abrir/fechar menu lateral">☰</button>
+<aside id="simulation-menu" class="fechado">
+  <nav>
+    <ul>
+      <!-- Deficiência Motora -->
+      <li>
+        <details>
+          <summary><input type="checkbox" id="def_mot"> Deficiência Motora</summary>
+          <ul class="subconfig">
+            <li>
+              <label for="def_mot_freq">Frequência (segundos):
+                <input type="range" id="def_mot_freq" min="0.1" max="1" step="0.1" value="0.5">
+                <span id="def_mot_freq_valor">0.5</span>
+              </label>
+            </li>
+            <li>
+              <label for="def_mot_desl">Deslocamento (pixels):
+                <input type="range" id="def_mot_desl" min="10" max="60" step="5" value="15">
+                <span id="def_mot_desl_valor">15</span>
+              </label>
+            </li>
           </ul>
-          <button id="efeito-deuteranopia" class="efeito-button">Mostrar efeito</button>
-            <div id="deuteranopia"></div>
-        </article>
-        <article id="exemplo2">
-        <h4>Protanopia</h4>
-        <ul>
-          <li>
-            Causa: Falta de cones vermelhos (protanópsia).
-          </li>
-          <li>
-            Percepção: Vermelhos podem parecer mais escuros, verdes podem ser indistinguíveis de cinzas ou marrons.
-          </li>
-        </ul>
-          <button id="efeito-protanopia" class="efeito-button">Mostrar efeito</button>
-            <div id="protanopia"></div>
-        </article>
-        <article id="exemplo3">
-        <h4>Tritanopia</h4>
-        <ul>
-          <li>
-            Causa: Falta de cones azuis (tritanópsia).
-          </li>
-          <li>
-            Percepção: Azuis podem parecer mais escuros, amarelos podem ser indistinguíveis de cinzas ou marrons.
-          </li>
-        </ul>
-          <button id="efeito-tritanopia" class="efeito-button">Mostrar efeito</button>
-            <div id="tritanopia"></div>
-        </article>
-        <article id="exemplo4">
-        <h4>Daltonismo total</h4>
-        <ul>
-          <li>
-            Causa: Falta de todos os tipos de cones (acromatópsia).
-          </li>
-          <li>
-            Percepção: Visão em tons de cinza, sem percepção de cores.
-          </li>
-        </ul>
-          <button id="efeito-acromatopsia" class="efeito-button">Mostrar efeito</button>
-            <div id="acromatopsia"></div>
-        </article>
-    </section>
-  </main>
+        </details>
+      </li>
+
+      <!-- Daltonismo -->
+      <li>
+        <details>
+          <summary><input type="checkbox" id="daltonismo"> Daltonismo</summary>
+          <ul class="subconfig">
+            <li>
+              <label for="tipo_daltonismo">Tipo:
+                <select id="tipo_daltonismo">
+                  <option value="protanopia">Protanopia</option>
+                  <option value="deuteranopia">Deuteranopia</option>
+                  <option value="tritanopia">Tritanopia</option>
+                  <option value="acromatopsia">Acromatopsia</option>
+                </select>
+              </label>
+            </li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- TDAH -->
+      <li>
+        <details>
+          <summary><input type="checkbox" id="tdah"> TDAH</summary>
+          <ul class="subconfig">
+            <li>
+              <label for="tdah_estimulo">Nível de estímulo:
+                <input type="range" id="tdah_estimulo" min="1" max="10" step="1" value="5">
+                <span id="tdah_estimulo_valor">5</span>
+              </label>
+            </li>
+            <li>
+              <label for="tdah_distracao">Nível de distração:
+                <input type="range" id="tdah_distracao" min="1" max="10" step="1" value="5">
+                <span id="tdah_distracao_valor">5</span>
+              </label>
+            </li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- Dislexia -->
+      <li>
+        <details>
+          <summary><input type="checkbox" id="dislexia"> Dislexia</summary>
+          <ul class="subconfig">
+            <li>
+              <label for="dislexia_tipo">Tipo de dificuldade:
+                <select id="dislexia_tipo">
+                  <option value="decodificacao">Decodificação</option>
+                  <option value="fluencia">Fluência</option>
+                  <option value="compreensao">Compreensão</option>
+                </select>
+              </label>
+            </li>
+            <li>
+              <label for="dislexia_intensidade">Intensidade:
+                <input type="range" id="dislexia_intensidade" min="0" max="100" step="5" value="50">
+                <span id="dislexia_intensidade_valor">50%</span>
+              </label>
+            </li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </nav>
+</aside>
+<main id="main-content">
+  <button id="topBtn" onclick="backToTop()">⬆ Voltar ao Topo</button>
+  <h2 id="titulo">Daltonismo</h2>
+  <p>
+    O daltonismo é uma condição que afeta a percepção das cores, causada principalmente por alterações genéticas nos
+    cones da retina, que são responsáveis por detectar as cores. A forma mais comum de daltonismo é hereditária
+    (ligada ao cromossomo X), mas também pode ser adquirida por doenças ou lesões oculares.
+  </p>
+
+  <p>
+    Existem diferentes tipos de daltonismo, dependendo de quais cones estão afetados. Cada tipo altera a percepção das
+    cores de forma distinta:
+  </p>
+
+  <section>
+    <h3>Tipos de daltonismo</h3>
+
+    <article id="exemplo1">
+      <h4>Deuteranopia</h4>
+      <img src="../assets-daltonismo/deuteranopia.webp" alt="Exemplo de visão com deuteranopia" width="300" height="200" style="max-width: 100%; height: auto; margin-bottom: 0.5em;">
+      <ul>
+        <li>Causa: Falta de cones verdes (deuteranópsia).</li>
+        <li>Percepção: Vermelhos podem parecer mais escuros, verdes podem ser indistinguíveis de cinzas ou marrons.</li>
+      </ul>
+      <div id="deuteranopia1"></div>
+    </article>
+
+    <article id="exemplo2">
+      <h4>Protanopia</h4>
+      <img src="../assets-daltonismo/protanopia.jpg" alt="Exemplo de visão com protanopia" style="max-width: 100%; height: auto; margin-bottom: 0.5em;">
+      <ul>
+        <li>Causa: Falta de cones vermelhos (protanópsia).</li>
+        <li>Percepção: Vermelhos podem parecer mais escuros, verdes podem ser indistinguíveis de cinzas ou marrons.</li>
+      </ul>
+      <button id="efeito-protanopia" class="efeito-button">Mostrar efeito</button>
+      <div id="protanopia1"></div>
+    </article>
+
+    <article id="exemplo3">
+      <h4>Tritanopia</h4>
+      <img src="../assets-daltonismo/tritanopia.jpg" alt="Exemplo de visão com tritanopia" style="max-width: 100%; height: auto; margin-bottom: 0.5em;">
+      <ul>
+        <li>Causa: Falta de cones azuis (tritanópsia).</li>
+        <li>Percepção: Azuis podem parecer mais escuros, amarelos podem ser indistinguíveis de cinzas ou marrons.</li>
+      </ul>
+      <button id="efeito-tritanopia" class="efeito-button">Mostrar efeito</button>
+      <div id="tritanopia1"></div>
+    </article>
+
+    <article id="exemplo4">
+      <h4>Daltonismo total</h4>
+      <img src="../assets-daltonismo/acromatopsia.jpg" alt="Exemplo de visão com acromatopsia (daltonismo total)" style="max-width: 100%; height: auto; margin-bottom: 0.5em;">
+      <ul>
+        <li>Causa: Falta de todos os tipos de cones (acromatópsia).</li>
+        <li>Percepção: Visão em tons de cinza, sem percepção de cores.</li>
+      </ul>
+      <button id="efeito-acromatopsia" class="efeito-button">Mostrar efeito</button>
+      <div id="acromatopsia1"></div>
+    </article>
+  </section>
+</main>
+
 
   <footer id="feedback">
 
@@ -118,6 +201,41 @@
     </p>
   </footer>
 
+<svg style="display:none;" aria-hidden="true" focusable="false"> 
+  <defs> <!-- Protanopia --> 
+    <filter id="protanopia"> 
+      <feColorMatrix type="matrix" values=" 0.56667 0.43333 0 0 0 0.55833 0.44167 0 0 0 0 0.24167 0.75833 0 0 0 0 0 1 0"/> 
+    </filter>
+
+  <!-- Deuteranopia -->
+    <filter id="deuteranopia">
+      <feColorMatrix type="matrix" values="
+      0.625  0.375  0      0 0
+      0.7    0.3    0      0 0
+      0      0.3    0.7    0 0
+      0      0      0      1 0"/>
+    </filter>
+
+  <!-- Tritanopia -->
+    <filter id="tritanopia">
+      <feColorMatrix type="matrix" values="
+      0.95   0.05   0      0 0
+      0      0.433  0.567  0 0
+      0      0.475  0.525  0 0
+      0      0      0      1 0"/>
+    </filter>
+
+  <!-- Acromatopsia (Escala de Cinza) -->
+    <filter id="acromatopsia">
+      <feColorMatrix type="matrix" values="
+      0.299  0.587  0.114  0 0
+      0.299  0.587  0.114  0 0
+      0.299  0.587  0.114  0 0
+      0      0      0      1 0"/>
+    </filter>
+
+  </defs> 
+</svg>
 </body>
 
 </html>

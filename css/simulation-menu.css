@@ -1,0 +1,118 @@
+/* Estilo do menu lateral */
+#simulation-menu {
+  position: fixed;
+  left: 0;
+  top: 12.5%;
+  width: 240px;
+  height: 75vh;
+  background: #f2f2fc;
+  border-radius: 0 20px 20px 0;
+  border-right: 2px solid #ccc;
+  padding: 1.5em 1em;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  color: #222;
+  font-family: Arial, sans-serif;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(0); /* Aberto por padrão */
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+/* Estilo do menu fechado */
+#simulation-menu.fechado {
+  transform: translateX(-250px); /* Esconde o menu */
+}
+
+/* Lista principal do menu */
+#simulation-menu nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#simulation-menu nav ul li {
+  margin-bottom: 1.2em;
+}
+
+#simulation-menu nav ul li summary {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.4em;
+  border-radius: 6px;
+  background-color: #e3e3f9;
+  color: #333;
+}
+
+#simulation-menu nav ul li details[open] summary {
+  background-color: #d0cff3;
+}
+
+#simulation-menu nav ul li input[type="checkbox"] {
+  margin-right: 0.4em;
+}
+
+/* Sub-configurações com recuo */
+.subconfig {
+  margin-left: 1.5em;
+  margin-top: 0.6em;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.subconfig label {
+  display: block;
+  margin-bottom: 0.8em;
+  line-height: 1.4;
+}
+
+/* Estilo dos sliders e selects */
+.subconfig input[type="range"],
+.subconfig select {
+  width: 100%;
+  margin-top: 0.3em;
+}
+
+.subconfig span {
+  font-weight: bold;
+  margin-left: 0.5em;
+  color: #222;
+}
+
+/* Botão flutuante para abrir/fechar menu */
+#sidebarToggleBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 15px;
+  background-color: indigo;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease;
+  z-index: 1100;
+}
+
+#sidebarToggleBtn:hover {
+  background-color: #9c6bc0;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  #simulation-menu {
+    top: 0;
+    height: 100vh;
+    border-radius: 0;
+    padding-top: 3rem;
+  }
+  #sidebarToggleBtn {
+    bottom: 1rem;
+    left: 1rem;
+
+  }
+}
