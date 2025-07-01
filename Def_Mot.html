@@ -9,8 +9,9 @@
     >
 
     <link rel="stylesheet" href="Def_Mot.css">
-    <script src="Def_Mot.js" defer></script>
     <script src="Geral.js" defer></script>
+    <script src="Def_Mot.js" defer></script>
+    
 
     <title>Deficiencia Fisica</title>
   </head>
@@ -19,11 +20,33 @@
       <h1>ICSM49</h1>
       <button class="menu-toggle">☰</button>
       <nav id="menu" aria-label="Menu Principal">
-        <button id="Simular" type="button" class="toggle-btn">Simulação</button>
         <a href="main.html">Conteúdo</a>
         <a href="Equipe.html">Equipe</a>
       </nav>
     </header>
+
+  <aside id="sidebar" class="fechado">
+    <button id="toggleMenu">☰</button>
+    <ul>
+      <li>
+        <details>
+          <summary><input type="checkbox" id="def_mot">Deficiência Física</summary>
+          <ul>
+            <li>
+              <label>Frequência (segundos)
+                <input type="range" id="def_mot_freq" min="0.1" max="1" step="0.1" value="0.5"> <span id="def_mot_freq_valor">0.5</span>
+              </label>
+            </li>
+            <li>
+              <label>Deslocamento (pixels)
+                <input type="range" id="def_mot_desl" min="10" max="60" step="5" value="15"> <span id="def_mot_desl_valor">15</span>
+              </label>
+            </li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </aside>
 
     <main id="main-content">
       <h2 id="titulo">Deficiência Física</h2>
@@ -76,6 +99,23 @@
             A <strong>tetraplegia</strong>, ou quadriplegia, é a paralisia dos quatro membros do corpo, ambas pernas e ambos os braços, 
             enquanto a <strong>tetraparesia</strong>, ou quadriparesia, é a paralisia parcial dos quatro membros do corpo. 
           </p>
+          <h4>Nanismo</h4>
+            <p>
+              O <strong>nanismo</strong> é uma condição caracterizada por um crescimento anormalmente baixo, resultando em estatura significativamente inferior à média. 
+              Embora não seja uma deficiência motora no sentido tradicional, o nanismo pode afetar a mobilidade e a funcionalidade física de uma pessoa, dependendo do tipo e da gravidade da condição.
+            </p>
+            <p>
+              Enquanto existem centenas de tipos de nanismo, esses são divididas em dois grupos principais:
+            </p>
+            <ul>
+              <li>
+                <strong>Nanismo proporcional</strong>: onde as proporções do corpo são mantidas, mas a estatura é reduzida. 
+                Exemplos incluem o nanismo pituitário e o nanismo primordial.
+              </li>
+              <li>
+                <strong>Nanismo desproporcional</strong>: onde as proporções do corpo são alteradas, resultando em membros ou orgãos fora da proporção do corpo. 
+                Exemplos incluem a acondroplasia e a displasia diastófica.
+              </li>
         </article>
 
         <article id="exemplo2">
@@ -90,6 +130,12 @@
                 <a href="https://support.apple.com/pt-br/guide/accessibility-mac/mchl437b47b0/mac">macOS</a> 
                 possuem suporte nativo para essa tecnologia, ambos necessitam de hardware especializado para funcionar corretamente. 
                 Existem algumas opções de software que permitem o uso de webcams comuns, como o <a href="https://www.realeye.io/pt-br/">Real Eye</a>" e o <a href="https://beam.eyeware.tech/pt/">Beam eye tracker</a>, o segundo porém possuindo um foco em softwares de jogos digitais.
+              </p>
+            <h4>Comandos de voz</h4>
+              <p>
+                Através dos comandos de voz, é possível controlar dispositivos e softwares sem a necessidade de interação física.
+                Ambos <a href="https://support.microsoft.com/pt-br/windows/controle-por-voz-ativa%C3%A7%C3%A3o-por-voz-escrita-%C3%A0-tinta-digita%C3%A7%C3%A3o-e-privacidade-149e0e60-7c93-dedd-a0d8-5731b71a4fef">Windows</a> e <a href="https://support.apple.com/pt-br/102225">Mac OS</a>
+                possuem suporte nativo para essa tecnologia, permitindo o controle de diversos aspectos do sistema operacional e aplicativos através de comandos de voz. Para dispositivos móveis tanto o <a href="https://support.apple.com/pt-br/guide/iphone/iph2c21a3c88/ios">Iphone</a> e <a href="https://support.google.com/accessibility/android/answer/6151854?hl=pt-BR">Android</a> também possuem suporte nativo para essa tecnologia.
               </p>
         </article>
 

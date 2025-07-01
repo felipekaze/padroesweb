@@ -12,6 +12,7 @@
       content="Ian Fenato da Silva Cordeiro - 23/04/2025 - 2025.1"
     />
     <link rel="stylesheet" href="main.css" />
+    <script src="Geral.js" defer></script>
     <title>Relatório Individual</title>
   </head>
   <body>
@@ -21,11 +22,34 @@
       </nav>
     </header>
 
+    <aside id="sidebar" class="fechado">
+    <button id="toggleMenu">☰</button>
+    <ul>
+      <li>
+        <details>
+          <summary><input type="checkbox" id="def_mot">Deficiência Física</summary>
+          <ul>
+            <li>
+              <label>Frequência (segundos)
+                <input type="range" id="def_mot_freq" min="0.1" max="1" step="0.1" value="0.5"> <span id="def_mot_freq_valor">0.5</span>
+              </label>
+            </li>
+            <li>
+              <label>Deslocamento (pixels)
+                <input type="range" id="def_mot_desl" min="10" max="60" step="5" value="15"> <span id="def_mot_desl_valor">15</span>
+              </label>
+            </li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </aside>
+
     <main id="main-content">
       <p>Páginas</p>
       <ul>
           <li><a href="Daltonismo.html">Daltonismo</a></li>
-          <li><a href="Def_Mot.html">Deficiência Motora</a></li>
+          <li><a href="Def_Mot.html">Deficiência Física</a></li>
           <li><a href="Dislexia.html">Dislexia</a></li>
           <li><a href="TDAH.html">TDAH</a></li>
           <li><a href="Equipe.html">Equipe</a></li>
