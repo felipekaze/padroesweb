@@ -317,3 +317,60 @@ img {
     margin-bottom: 1.5rem;
   }
 }
+
+/* Estilo do menu lateral */
+
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 12.5%;
+  width: 220px;
+  height: 75vh;
+  background: #282c34;
+  border-right: 1px solid #333;
+  padding: 1em;
+  transition: transform 0.3s;
+  z-index: 1000;
+  color: #f0f0f0;
+}
+#sidebar.fechado {
+  transform: translateX(-220px);
+}
+#toggleMenu {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #61dafb;
+  color: #282c34;
+  font-size: 1.5em;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+#toggleMenu:hover {
+  background: #21a1f1;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  margin-bottom: 1em;
+}
+nav ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: color 0.2s;
+}
+nav ul li a:hover {
+  color: #61dafb;
+}
+.subconfig {
+  margin-left: 1.5em;
+  margin-top: 0.5em;
+}
