@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Projeto educacional com foco em acessibilidade e inclusão, apresentando informações sobre o projeto e a equipe envolvida." />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="equipe.css" />
+  <title>Projeto ICSM49</title>
+</head>
+
+<body>
+<header>
+  <h1>ICSM49</h1>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
+  <nav id="menu" aria-label="Menu Principal" hidden>
+    <a href="main.html">Principal</a>
+    <div class="dropdown-simulation-menu">
+      <button type="button" onclick="alert('Botão 1 clicado')" aria-label="Botão 1">Botão 1</button>
+      <button type="button" onclick="alert('Botão 2 clicado')" aria-label="Botão 2">Botão 2</button>
+      <button type="button" onclick="alert('Botão 3 clicado')" aria-label="Botão 3">Botão 3</button>
+      <button type="button" onclick="alert('Botão 4 clicado')" aria-label="Botão 4">Botão 4</button>
+    </div>
+  </nav>
+</header>
+
+  <main id="main-content">
+<section id="sobre-projeto" aria-labelledby="titulo-sobre-projeto">
+  <h2 id="titulo-sobre-projeto">Sobre o Projeto</h2>
+  <p>
+    O projeto tem como objetivo principal promover a compreensão de como diferentes tipos de deficiências impactam a experiência de navegação na web. Através de uma abordagem educativa, buscamos conscientizar desenvolvedores, designers e usuários sobre os desafios enfrentados por pessoas com deficiências visuais, motoras, cognitivas e neurodivergências.
+  </p>
+  <p>
+    Ao explorar casos como daltonismo, deficiência motora, dislexia e TDAH, o projeto evidencia como barreiras de design, falta de contraste, ausência de teclas de atalho, má estruturação semântica e sobrecarga de estímulos podem comprometer significativamente a acessibilidade de um site.
+  </p>
+  <p>
+    Acreditamos que a web deve ser um ambiente inclusivo e utilizável por todos. Por isso, nosso conteúdo visa apresentar de forma clara os impactos reais da acessibilidade — ou da sua ausência — no cotidiano digital de milhões de pessoas. Ao entender esses desafios, torna-se possível construir experiências mais humanas, eficientes e justas para todos os usuários.
+  </p>
+</section>
+
+
+    <section id="equipe" aria-labelledby="titulo-equipe">
+  <h2 id="titulo-equipe">Nossa Equipe</h2>
+  <div class="equipe-container">
+    <figure>
+      <img src="assets-equipe/felipe.jpg" alt="Foto de Felipe Augusto Kavetski" />
+      <div>
+        <figcaption>Felipe Augusto Kavetski</figcaption>
+        <p>Responsável pela organização do conteúdo e estrutura técnica do projeto.</p>
+      </div>
+    </figure>
+
+    <figure class="reverse">
+      <img src="assets-equipe/guilherme.jpg" alt="Foto de Guilherme Oliver Silva Pereira" />
+      <div>
+        <figcaption>Guilherme Oliver Silva Pereira</figcaption>
+        <p>Atuou na pesquisa sobre acessibilidade visual e implementação de interfaces.</p>
+      </div>
+    </figure>
+
+    <figure>
+      <img src="assets-equipe/gustavo.jpg" alt="Foto de Gustavo Franca Quinhonhe Ribeiro" />
+      <div>
+        <figcaption>Gustavo Franca Quinhonhe Ribeiro</figcaption>
+        <p>Contribuiu com o desenvolvimento front-end e revisão das normas de acessibilidade.</p>
+      </div>
+    </figure>
+
+    <figure class="reverse">
+      <img src="assets-equipe/ian.jpg" alt="Foto de Ian Fenato da Silva Cordeiro" />
+      <div>
+        <figcaption>Ian Fenato da Silva Cordeiro</figcaption>
+        <p>Participou da produção do conteúdo textual e testes de usabilidade do site.</p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+
+
+
+
+    <button id="topBtn" onclick="backToTop()">⬆ Voltar ao Topo</button>
+  </main>
+
+  <footer id="footer">
+
+
+    <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+      <span property="dct:title">Trabalho de Web Dev</span> licenciado por
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank"
+        title="Redirecionamento para site externo." rel="license noopener noreferrer" style="display: inline-block">
+        CC BY-NC-SA 4.0
+        <img class="cc-icons" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+          alt="Selo da licença Creative Commons" />
+        <img class="cc-icons" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+          alt="Selo da categoria BY" />
+        <img class="cc-icons" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
+          alt="Selo da categoria Non-Comercial" />
+        <img class="cc-icons" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
+          alt="Selo da categoria Share Alike" />
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("menu");
+      nav.classList.toggle("active");
+    }
+
+    const topBtn = document.getElementById("topBtn");
+
+    window.onscroll = function () {
+      if (document.documentElement.scrollTop > 300) {
+        topBtn.style.display = "block";
+      } else {
+        topBtn.style.display = "none";
+      }
+    };
+
+    function backToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+</body>
+
+</html>

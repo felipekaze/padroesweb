@@ -12,7 +12,7 @@
       content="Ian Fenato da Silva Cordeiro - 23/04/2025 - 2025.1"
     />
     <link rel="stylesheet" href="main.css" />
-    <title>Relatório Individual</title>
+    <title>Acessibilidade Digital</title>
   </head>
   <body>
     <header>
@@ -21,21 +21,80 @@
       </nav>
     </header>
 
-    <main id="main-content">
-      <p>Páginas</p>
+<main id="main-content">
+
+  <section>
+    <h2>O que é Acessibilidade Digital?</h2>
+    <p>
+      Acessibilidade digital é o conjunto de práticas e diretrizes que garantem que
+      pessoas com deficiência ou limitações — temporárias ou permanentes — possam
+      acessar, compreender, navegar e interagir com conteúdos e serviços digitais.
+      Isso inclui sites, aplicativos, documentos e outras plataformas online.
+    </p>
+    <p>
+      Criar experiências acessíveis significa considerar diferentes necessidades,
+      como uso de leitores de tela, navegação por teclado, contrastes adequados de cor,
+      legendas em vídeos, entre outros. Promover a acessibilidade é fundamental para
+      garantir a inclusão digital e o direito de todos ao acesso à informação.
+    </p>
+  </section>
+
+  <!-- Novo wrapper para páginas + descrições -->
+  <div class="content-wrapper">
+
+    <section class="paginas">
+      <h2>Páginas</h2>
       <ul>
-          <li><a href="Daltonismo.html">Daltonismo</a></li>
-          <li><a href="Def_Mot.html">Deficiência Motora</a></li>
-          <li><a href="Dislexia.html">Dislexia</a></li>
-          <li><a href="TDAH.html">TDAH</a></li>
-          <li><a href="Equipe.html">Equipe</a></li>
-        </ul>
-        
-    </main>
+        <li><a href="html/daltonismo.html">Daltonismo</a></li>
+        <li><a href="html/defMot.html">Deficiência Motora</a></li>
+        <li><a href="html/dislexia.html">Dislexia</a></li>
+        <li><a href="html/tdah.html">TDAH</a></li>
+        <li><a href="html/equipe.html">Equipe</a></li>
+      </ul>
+    </section>
+
+    <section class="descricao-paginas">
+
+      <section aria-labelledby="titulo-daltonismo">
+        <h2 id="titulo-daltonismo">Daltonismo</h2>
+        <a href="html/daltonismo.html"><img src="assets-main/daltonismo.webp" alt="Ilustração mostrando como pessoas com daltonismo enxergam as cores" width="400" height="100" /></a>
+        <p>
+          Daltonismo é uma condição visual que afeta a percepção das cores. Pessoas com daltonismo têm dificuldade em distinguir algumas cores, especialmente tons de vermelho e verde. Na web, isso pode dificultar a compreensão de informações que dependem exclusivamente do uso de cores para transmitir dados, como gráficos e alertas.
+        </p>
+      </section>
+
+      <section aria-labelledby="titulo-def-motora">
+        <h2 id="titulo-def-motora">Deficiência Motora</h2>
+        <a href="html/defMot.html"><img src="assets-main/deficiencia-motora.webp" alt="Pessoa utilizando um dispositivo assistivo para controlar o computador" width="400" height="100" /></a>
+        <p>
+          Deficiência motora afeta a capacidade de movimentação e coordenação motora fina, o que pode dificultar o uso do mouse e do teclado tradicionais. Sites acessíveis devem permitir navegação completa por teclado e suportar tecnologias assistivas para garantir que esses usuários consigam interagir com o conteúdo sem barreiras.
+        </p>
+      </section>
+
+      <section aria-labelledby="titulo-dislexia">
+        <h2 id="titulo-dislexia">Dislexia</h2>
+        <a href="html/dislexia.html"><img src="assets-main/dislexia.webp" alt="Professora auxiliando aluno com dislexia e mostrando o simbolo da dislexia" width="400" height="100" /></a>
+        <p>
+          Dislexia é uma dificuldade de leitura que afeta a decodificação das palavras. Para usuários com dislexia, textos claros, bem estruturados, com fontes legíveis e espaçamento adequado fazem grande diferença. Além disso, evitar jargões e utilizar uma linguagem simples ajuda na compreensão e na retenção da informação.
+        </p>
+      </section>
+
+      <section aria-labelledby="titulo-tdah">
+        <h2 id="titulo-tdah">TDAH</h2>
+        <a href="html/tdah.html"><img src="assets-main/tdah.jpg" alt="Ilustração sobre atenção e distração para pessoas com TDAH" width="400" height="100" /></a>
+        <p>
+          Pessoas com Transtorno do Déficit de Atenção com Hiperatividade (TDAH) podem ter dificuldades em manter a atenção em conteúdos longos ou muito carregados visualmente. Sites acessíveis para esse público devem evitar distrações excessivas, utilizar layouts limpos e permitir o controle do ritmo de leitura e navegação.
+        </p>
+      </section>
+
+    </section>
+  </div>
+</main>
+
+
 
     <footer id="license">
       <h2>Licença</h2>
-      <p>Deixe-nos sua opinião! Sua sugestão é muito importante para nós.</p>
     </footer>
   </body>
 </html>
