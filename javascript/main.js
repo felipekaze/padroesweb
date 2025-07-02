@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+  const checkbox = document.querySelector("#daltonismo");
+  const select = document.querySelector("#tipo_daltonismo");
   // Botão para abrir/fechar menu lateral
   const btnSidebar = document.querySelector("#sidebarToggleBtn");
   if (btnSidebar) {
@@ -9,12 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Event listeners dos filtros de daltonismo (checkbox e select)
-  const checkbox = document.querySelector("#daltonismo");
-  const select = document.querySelector("#tipo_daltonismo");
+
 
   if (checkbox && select) {
     checkbox.addEventListener("change", function(e) {
-      e.stopPropagation();  // previne conflito com outros eventos no menu
       atualizarFiltroDaltonismo();
     });
     select.addEventListener("change", atualizarFiltroDaltonismo);
@@ -27,11 +26,11 @@ function alternar_menu() {
 }
 
 function aplicarFiltro(idFiltro) {
-  $("body").css("filter", `url(#${idFiltro})`);
+  $("main").css("filter", `url(#${idFiltro})`);
 }
 
 function removerFiltro() {
-  $("body").css("filter", "");
+  $("main").css("filter", "");
 }
 
 function atualizarFiltroDaltonismo() {
