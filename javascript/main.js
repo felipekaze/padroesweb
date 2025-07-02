@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Ativa botão do menu superior
-  document.querySelector(".menu-toggle").addEventListener("click", alternar_menu);
 
   // Botão para abrir/fechar menu lateral
   const btnSidebar = document.querySelector("#sidebarToggleBtn");
