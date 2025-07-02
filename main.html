@@ -33,8 +33,23 @@
   <nav>
     <ul>
       <!-- Deficiência Física -->
-      <li>
+     <li>
           <summary><input type="checkbox" id="def_mot"> Deficiência Física</summary>
+          <ul class="subconfig">
+            <li>
+              <label for="def_mot_freq">Frequência (segundos):
+                <input type="range" id="def_mot_freq" min="0.1" max="1" step="0.1" value="0.5">
+                <span id="def_mot_freq_valor">0.5</span>
+              </label>
+            </li>
+            <li>
+              <label for="def_mot_desl">Deslocamento (pixels):
+                <input type="range" id="def_mot_desl" min="10" max="60" step="5" value="15">
+                <span id="def_mot_desl_valor">15</span>
+              </label>
+            </li>
+          </ul>
+        </details>
       </li>
 
       <!-- Daltonismo -->
