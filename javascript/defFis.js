@@ -48,7 +48,8 @@ async function simulacao()
     ...document.querySelectorAll("main h2"),
     ...document.querySelectorAll("main h3"),
     ...document.querySelectorAll("main h4"),
-    ...document.querySelectorAll("main li")
+    ...document.querySelectorAll("main li"),
+    ...document.querySelectorAll("main img")
     ];
 
     while(ativo)
