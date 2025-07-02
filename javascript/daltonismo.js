@@ -1,30 +1,36 @@
-const elementos = $("body *");
+document.addEventListener("DOMContentLoaded", function () {
+const checkbox = document.querySelector("#daltonismo");
+  const select = document.querySelector("#tipo_daltonismo");
+  // Botão para abrir/fechar menu lateral
+
+if (checkbox && select) {
+    checkbox.addEventListener("change", function(e) {
+      atualizarFiltroDaltonismo();
+    });
+    select.addEventListener("change", atualizarFiltroDaltonismo);
+  }
+});
+
+function alternar_menu() {
+  const nav = document.getElementById("menu");
+  nav.classList.toggle("active");
+}
 
 function aplicarFiltro(idFiltro) {
-  elementos.css("filter", `url(#${idFiltro})`);
+  $("main").css("filter", `url(#${idFiltro})`);
 }
 
 function removerFiltro() {
-  elementos.css("filter", "");
+  $("main").css("filter", "");
 }
 
 function atualizarFiltroDaltonismo() {
-  const checkboxAtivado = $("#ativar_daltonismo").is(":checked");
-  const tipoDaltonismo = $("#tipo_daltonismo").val();
+  const ativado = document.querySelector("#daltonismo")?.checked;
+  const tipo = document.querySelector("#tipo_daltonismo")?.value;
 
-  if (checkboxAtivado) {
-    aplicarFiltro(tipoDaltonismo);
+  if (ativado && tipo) {
+    aplicarFiltro(tipo);
   } else {
     removerFiltro();
   }
 }
-
-// Quando a checkbox muda
-$("#ativar_daltonismo").on("change", function () {
-  atualizarFiltroDaltonismo();
-});
-
-// Quando o select muda
-$("#tipo_daltonismo").on("change", function () {
-  atualizarFiltroDaltonismo();
-});
