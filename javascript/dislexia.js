@@ -1,5 +1,7 @@
 let dislexiaAtiva = false;
-let textoOriginal = "";
+const textosOriginais = new Map(); // armazena os textos originais por elemento
+const tagsPermitidas = ['P', 'SPAN', 'DIV', 'LI', 'A', 'LABEL', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6'];
+
 
 function embaralharPalavra(palavra) {
   if (palavra.length <= 3) return palavra;
@@ -17,7 +19,7 @@ function embaralharPalavra(palavra) {
 }
 
 function trocarLetrasAleatoriamente(palavra) {
-  const trocas = { 'b': 'd', 'd': 'b', 'p': 'q', 'q': 'p', 'm': 'n', 'n': 'm', 'u': 'n' };
+  const trocas = { 'b': 'd', 'd': 'b', 'p': 'q', 'q': 'p', 'm': 'n', 'n': 'm'};
   return palavra.split('').map(letra => {
     const min = letra.toLowerCase();
     if (trocas[min] && Math.random() < 0.5) {
@@ -40,29 +42,45 @@ function aplicarEfeitoDislexia(texto) {
   }).join('');
 }
 
+
 function alternarDislexia() {
-  const p = document.getElementById("dislexia-1");
-  const botao = document.getElementById("efeito-Visual-Espacial");
+  const elementosComTexto = Array.from(document.querySelectorAll(tagsPermitidas.join(','))).filter(el => {
+    return (
+      el.children.length === 0 && // só elementos sem filhos
+      el.textContent.trim().length > 0 // que têm texto visível
+    );
+  });
 
-  if (!dislexiaAtiva) {
-    textoOriginal = p.innerText;
-    p.innerText = aplicarEfeitoDislexia(textoOriginal);
-    dislexiaAtiva = true;
+  elementosComTexto.forEach(el => {
+    if (!dislexiaAtiva) {
+      if (!textosOriginais.has(el)) {
+        textosOriginais.set(el, el.innerText);
+      }
+      el.innerText = aplicarEfeitoDislexia(textosOriginais.get(el));
+    } else {
+      if (textosOriginais.has(el)) {
+        el.innerText = textosOriginais.get(el);
+      }
+    }
+  });
 
-    p.classList.toggle("shake", dislexiaAtiva);
-    botao.innerText = "Desativar efeito de dislexia";
-  } else {
-    p.innerText = textoOriginal;
-    dislexiaAtiva = false;
-    p.classList.toggle("shake", dislexiaAtiva);
-    botao.innerText = "Ativar efeito de dislexia";
-  }
+  dislexiaAtiva = !dislexiaAtiva;
 }
+
 
 // Garante que o botão existe antes de adicionar o evento
 document.addEventListener("DOMContentLoaded", () => {
-  const botao = document.getElementById("efeito-Visual-Espacial");
-  if (botao) {
-    botao.addEventListener("click", alternarDislexia);
-  }
+  const checkbox = document.getElementById("dislexia-checkbox");
+  checkbox.addEventListener("change", (event) =>
+  {
+    if (event.target.checked) 
+    {
+      dislexiaAtiva = false
+    } 
+    else 
+    {
+      dislexiaAtiva = true
+    }
+    alternarDislexia();
+  });
 });
