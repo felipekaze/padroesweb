@@ -1,10 +1,10 @@
 let simulacaoAtiva = false;
 let elementosDistracao = [];
 
-let audioInicio = new Audio("inicio.mp3");
-let audioDistracao = new Audio("distracao.mp3");
-let audioFim = new Audio("fim.mp3");
-let audioFundo = new Audio("fundo.mp3");
+var audioInicio = new Audio("../assets-tdah/inicio.mp3");
+var audioDistracao = new Audio("../assets-tdah/distracao.mp3");
+var audioFim = new Audio("../assets-tdah/fim.mp3");
+var audioFundo = new Audio("../assets-tdah/fundo.mp3");
 
 audioFundo.loop = true;
 audioFundo.volume = 0.4;
@@ -21,7 +21,6 @@ function simularTDAH() {
     return;
   }
   simulacaoAtiva = true;
-  document.getElementById("mensagemSimulacao").textContent = "simulacao em andamento...";
 
   audioInicio.play().catch(function () {});
 
@@ -44,9 +43,9 @@ function simularTDAH() {
       return;
     }
 
-    let index = Math.floor(Math.random() * mensagens.length);
-    let div = document.createElement("div");
-    div.textContent = mensagens[index];
+      var index = Math.floor(Math.random() * mensagens.length);
+      var div = document.createElement("div");
+      div.textContent = mensagens[index];
 
     div.style.position = "fixed";
     div.style.padding = "8px 12px";
@@ -104,20 +103,26 @@ function pararSimulacao() {
   audioFim.play().catch(function () {});
 
   document.body.style.backgroundColor = "";
-  document.getElementById("mensagemSimulacao").textContent = "simulacao encerrada.";
 }
 
 // Exponha as funções para serem chamadas do HTML
 window.simularTDAH = simularTDAH;
 window.pararSimulacao = pararSimulacao;
 
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const checkbox = document.getElementById("tdah");
-  checkbox.addEventListener("change", function () {
-    if (checkbox.checked) {
-      simularTDAH();
-    } else {
-      pararSimulacao();
+  checkbox.addEventListener("change", (event) =>
+  {
+    if (event.target.checked) 
+    {
+      simulacaoAtiva = false
+      simularTDAH()
+
+    } 
+    else 
+    {
+      simulacaoAtiva = true
+      pararSimulacao()
     }
   });
 });
