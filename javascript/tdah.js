@@ -1,5 +1,5 @@
-var simulacaoAtiva = false;
-var elementosDistracao = [];
+let simulacaoAtiva = false;
+let elementosDistracao = [];
 
 var audioInicio = new Audio("../assets-tdah/inicio.mp3");
 var audioDistracao = new Audio("../assets-tdah/distracao.mp3");
@@ -9,8 +9,8 @@ var audioFundo = new Audio("../assets-tdah/fundo.mp3");
 audioFundo.loop = true;
 audioFundo.volume = 0.4;
 
-var audios = [audioInicio, audioDistracao, audioFim, audioFundo];
-for (var i = 0; i < audios.length; i++) {
+let audios = [audioInicio, audioDistracao, audioFim, audioFundo];
+for (let i = 0; i < audios.length; i++) {
   audios[i].addEventListener('error', function () {
     console.warn("erro ao carregar audio: " + this.src);
   });
@@ -28,24 +28,24 @@ function simularTDAH() {
     audioFundo.play().catch(function () {});
   }
 
-  var mensagens = [
-    "olha ali!",
-    "foco!",
-    "to aqui.",
-    "ei!",
-    "presta atencao!",
-    "concentra!"
+  let mensagens = [
+    "Olha ali!",
+    "Foco!",
+    "To aqui.",
+    "Ei!",
+    "Presta atenção!",
+    "Concentra!"
   ];
 
-  var intervalID = setInterval(function () {
+  let intervalID = setInterval(function () {
     if (!simulacaoAtiva) {
       clearInterval(intervalID);
       return;
     }
 
-    var index = Math.floor(Math.random() * mensagens.length);
-    var div = document.createElement("div");
-    div.textContent = mensagens[index];
+      var index = Math.floor(Math.random() * mensagens.length);
+      var div = document.createElement("div");
+      div.textContent = mensagens[index];
 
     div.style.position = "fixed";
     div.style.padding = "8px 12px";
@@ -87,8 +87,8 @@ function simularTDAH() {
 function pararSimulacao() {
   simulacaoAtiva = false;
 
-  for (var i = 0; i < elementosDistracao.length; i++) {
-    var elem = elementosDistracao[i];
+  for (let i = 0; i < elementosDistracao.length; i++) {
+    let elem = elementosDistracao[i];
     if (elem.parentNode) {
       elem.parentNode.removeChild(elem);
     }
