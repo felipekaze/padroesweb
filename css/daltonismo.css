@@ -257,6 +257,58 @@ img {
   box-shadow: 0 4px 8px rgba(74, 20, 140, 0.15); 
 }
 
+dl {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #7e57c2; /* barra roxa */
+  max-width: 700px;
+}
+
+dt {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  color: #4a148c; /* roxo escuro */
+  cursor: pointer;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+dt::before {
+  content: "❯"; /* símbolo de seta */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  color: #7e57c2;
+  transition: transform 0.3s ease;
+}
+
+dt[aria-expanded="true"]::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+dd {
+  margin-left: 1.2rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #6a1b9a; /* roxo médio */
+  line-height: 1.4;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 1000px; /* valor alto para visibilidade */
+  opacity: 1;
+  overflow: hidden;
+}
+
+dd.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin-bottom: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 
 @media (max-width: 768px) {
   .menu-toggle {
